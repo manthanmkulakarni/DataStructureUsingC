@@ -90,6 +90,7 @@ node* delete(node *r,int num)
     else{
         search(r,num);
         if(flg==1){
+            //for deleteing leaf nodes
             if(del->llink==NULL&&del->rlink==NULL)
             {
                 printf("%d deleted\n",del->data);
@@ -102,6 +103,7 @@ node* delete(node *r,int num)
                 }
                 free(del);
             }
+            //for deletion of nodes with only one child
             else if(del->rlink!=NULL&&del->llink==NULL)
             {
                 printf("case 2\n");
@@ -114,6 +116,7 @@ node* delete(node *r,int num)
                 }
 
             }
+            //for deletion of nodes with only one child
             else if(del->llink!=NULL&&del->rlink==NULL)
             {
                 printf("case 2\n");
@@ -126,7 +129,7 @@ node* delete(node *r,int num)
                 }
             }
             
-        
+        //for deletion of nodes with two child
         else if(del->rlink!=NULL&&del->llink!=NULL)
         {
             printf("case 3\n");
